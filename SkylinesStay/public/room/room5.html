@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Details Page</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/room.css" />
+    <script
+      src="https://kit.fontawesome.com/e2d353a86b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav id="navBar" class="navbar-white">
+        <a href="../room/Project.html">
+      <img src="../images/logo.png" alt="" class="logo"></a>
+     
+      <a href="#" class="register-btn">Book Now</a>
+      <i class="fas fa-bars" onclick="togglebtn()"></i>
+    </nav>
+
+    <div class="house-details">
+      <div class="house-title">
+        <h1>Royal Villa</h1>
+        <div class="row">
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>100 Reviews</span>
+          </div>
+          <div>
+            <p>Location: San Francisco, California, United State</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery-img-1">
+          <img src="../images/room5.jpg" alt="" />
+        </div>
+        <div><img src="../images/room5.1.webp" alt="" /></div>
+        <div><img src="../images/room5.2.webp" alt="" /></div>
+        <div><img src="../images/room5.3.webp" alt="" /></div>
+        <div><img src="../images/room5.4.webp" alt="" /></div>
+      </div>
+      <div class="small-details">
+        <h2>Experience the epitome of luxury and comfort in our exclusive villa.</h2>
+        <p>6 guest &nbsp; &nbsp; 4 beds &nbsp; &nbsp; 2 bathroom</p>
+        <h4>₹30000/night</h4>
+      </div>
+      <hr class="line">
+      <section class="section__container booking__container">
+        <form action="/" class="booking__form">
+          <!-- Check-In Input -->
+          <div class="input__group">
+            <span><i class="ri-calendar-2-fill"></i></span>
+            <div>
+              <label for="check-in">CHECK-IN</label>
+              <input type="date" id="check-in" name="check-in" required />
+            </div>
+          </div>
+      
+          <!-- Check-Out Input -->
+          <div class="input__group">
+            <span><i class="ri-calendar-2-fill"></i></span>
+            <div>
+              <label for="check-out">CHECK-OUT</label>
+              <input type="date" id="check-out" name="check-out" required />
+            </div>
+          </div>
+      
+          <!-- Guests Input -->
+          <div class="input__group">
+            <span><i class="ri-user-fill"></i></span>
+            <div>
+              <label for="guest">GUEST</label>
+              <input type="number" id="guest" name="guest" min="1" max="10" placeholder="Number of Guests" required />
+            </div>
+          </div>
+      
+          <!-- Submit Button -->
+          <div class="input__group input__btn">
+            <button type="submit" class="btn"><a href="../room/room1.html"> CHECK OUT </a></button>
+          </div>
+        </form>
+      </section>
+
+      <ul class="details-list">
+        <li>
+          <i class="fas fa-home"></i>Entire Home
+          <span>You will have the entire room for you.</span>
+        </li>
+        <li>
+          <i class="fas fa-paint-brush"></i>Enhanced Clean
+          <span>This hotel has committed to SkyLine Stays cleaning process.</span>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>Great Location
+          <span>90% of recent guests gave the location a 5 star rating.</span>
+        </li>
+        <li>
+          <i class="fas fa-heart"></i>Great check-in Experience
+          <span
+            >100% of recent guests gave the check-in process a 5 star
+            rating.</span
+          >
+        </li>
+      </ul>
+     
+
+      <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.532259322802!2d-122.4472130366527!3d37.75411614320194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1668776846052!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <b>San Francisco, California, United States</b>
+        <p>It's like a home away from home.</p>
+      </div>
+
+      <hr class="line">
+
+      <button id="scrollToTopBtn" style="display: none;">↑</button>
+    <div class="container">
+        <div class="footer">
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instragram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com"><i class="fa-brands fa-github"></i></i></a>
+            <hr>
+            <p>Copyright &copy; 2024, SkyLine Stays.</p>
+          </div>
+        </div>
+
+    <script>
+      var navBar = document.getElementById("navBar");
+      function togglebtn() {
+        navBar.classList.toggle("hidemenu");
+      }
+      // Get the button
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Show the button when the user scrolls down 20px from the top of the document
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Scroll to the top when the button is clicked
+scrollToTopBtn.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll
+    });
+};
+    </script>
+  </body>
+</html>

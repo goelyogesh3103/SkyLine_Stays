@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyLine Stays - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+
+        /* Loader Styling */
+        #loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Welcome Message Styling */
+        #content {
+            display: none;
+            font-size: 2em;
+            color: white;
+            
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 20px; /* Adjusts the distance from the top */
+            left: 20px; /* Adjusts the distance from the left */
+            text-align: left;
+        }
+
+        /* Apply distinct color and size to Skyline Stays */
+        #content span.word-3, #content span.word-4 {
+            color: #4c0e51; /* Special color for Skyline Stays */
+            font-size: 2.5em; /* Larger font size */
+            display: block; /* Starts Skyline on a new line */
+        }
+
+        /* Default color for other words */
+        #content span {
+            color: #101d66; 
+            opacity: 0; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader"></div>
+
+    <!-- Welcome Message -->
+    <div id="content">
+        <span class="word-1">Welcome</span>
+        <span class="word-2">to</span><br>
+        <span class="word-3">Skyline</span>
+        <span class="word-4">Stays</span>
+    </div>
+
+    <div class="wrapper">
+        <form action="/login" method="post">
+            <h2>Login</h2>
+            <div class="input-field">
+                <input type="text" name="name" required>
+                <label for="name">Enter your name</label>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" required>
+                <label for="password">Enter your password</label>
+            </div>
+            <button type="submit" class="sub">Log In</button>
+            <div class="register">
+                <p>Don't have an account? <a href="/signup">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+      // Simulate dynamic content loading
+      window.onload = function() {
+        // Show loader for 2 seconds
+        setTimeout(function() {
+          // Hide loader
+          document.getElementById('loader').style.display = 'none';
+          
+          // Show welcome message
+          document.getElementById('content').style.display = 'block';
+
+          // Show words one by one with a delay
+          let words = document.querySelectorAll('#content span');
+          let delay = 800; // Increased delay between each word (800ms)
+
+          words.forEach((word, index) => {
+            setTimeout(function() {
+              word.style.opacity = '1'; // Reveal word
+            }, index * delay);
+          });
+
+          // After 2 more seconds (after the final word), show login form
+          setTimeout(function() {
+            document.getElementById('content').style.display = 'none';
+            document.querySelector('.wrapper').style.display = 'block';
+          }, words.length * delay + 2000); // Time delay for all words + 2 seconds
+        }, 2000); // Initial 2-second delay for loader
+      };
+    </script>
+</body>
+</html>
+
